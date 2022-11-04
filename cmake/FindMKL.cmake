@@ -164,7 +164,7 @@ macro(CHECK_BLAS_LIBRARIES LIBRARIES _prefix _name _flags _list _threadlibs _add
   #message("DEBUG: ${LIBRARIES} = ${${LIBRARIES}}")
 endmacro()
 
-set(MKL_LIBRARIES)
+set(MKL_LIBRARIES "C:/Program Files (x86)/Intel/oneAPI/mkl/2021.4.0/lib/intel64/mkl_rt.lib")
 if(NOT $ENV{BLA_VENDOR} STREQUAL "")
   set(BLA_VENDOR $ENV{BLA_VENDOR})
 else()

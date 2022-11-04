@@ -918,6 +918,7 @@ simd8float32 load_simd8float32_partial(const float* x, int n) {
 
 } // anonymous namespace
 
+#include <windows.h>
 void compute_PQ_dis_tables_dsub2(
         size_t d,
         size_t ksub,
@@ -930,7 +931,7 @@ void compute_PQ_dis_tables_dsub2(
     FAISS_THROW_IF_NOT(ksub % 8 == 0);
 
     for (size_t m0 = 0; m0 < M; m0 += 4) {
-        int m1 = std::min(M, m0 + 4);
+        int m1 = min(M, m0 + 4);
         for (int k0 = 0; k0 < ksub; k0 += 8) {
             simd8float32 centroids[8];
             for (int k = 0; k < 8; k++) {
